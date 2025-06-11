@@ -1,24 +1,22 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/command-set-extension-manifest.schema.json",
-
   "id": "d9951864-beb6-485f-93be-2ee2f1f55e4b",
   "alias": "FolderpickerCommandSet",
   "componentType": "Extension",
   "extensionType": "ListViewCommandSet",
-
   // The "*" signifies that the version should be taken from the package.json
   "version": "*",
   "manifestVersion": 2,
-
   // If true, the component can only be installed on sites where Custom Script is allowed.
   // Components that allow authors to embed arbitrary script code should set this to true.
   // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
   "requiresCustomScript": false,
-
   "items": {
     "COMMAND_1": {
-      "title": { "default": "Picker" },
-      "iconImageUrl": "icons/request.png",
+      "title": {
+        "default": "Picker"
+      },
+      "iconImageUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='16px' height='16px' viewBox='0 0 16 16' version='1.1'%3E %3Cpath fill='%234D4D4D' d='M 12.667969 13.832031 L 11.125 7.832031 C 11.695312 7.125 12.003906 6.242188 12 5.332031 C 12 3.125 10.210938 1.332031 8 1.332031 C 5.789062 1.332031 4 3.125 4 5.332031 C 4 6.25 4.3125 7.136719 4.894531 7.847656 L 3.332031 13.832031 C 3.265625 14.09375 3.363281 14.371094 3.578125 14.535156 C 3.796875 14.695312 4.085938 14.710938 4.320312 14.574219 L 7.875 12.488281 L 11.660156 14.578125 C 11.761719 14.640625 11.878906 14.671875 12 14.667969 C 12.210938 14.671875 12.410156 14.582031 12.542969 14.417969 C 12.671875 14.253906 12.71875 14.035156 12.667969 13.832031 Z M 8 2.667969 C 9.472656 2.667969 10.667969 3.859375 10.667969 5.332031 C 10.667969 6.804688 9.472656 8 8 8 C 6.527344 8 5.332031 6.804688 5.332031 5.332031 C 5.332031 3.859375 6.527344 2.667969 8 2.667969 Z M 8 2.667969 '/%3E%3C/svg%3E ",
       "type": "command"
     }
   }
