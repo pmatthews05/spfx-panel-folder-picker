@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "folderpicker-command-set": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/folderpicker/FolderpickerCommandSet.js",
+          "manifest": "./src/extensions/folderpicker/FolderpickerCommandSet.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FolderpickerCommandSetStrings": "lib/extensions/folderpicker/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
