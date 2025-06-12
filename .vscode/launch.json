@@ -5,7 +5,7 @@
       "name": "Application Customizer Debug",
       "type": "msedge",
       "request": "launch",
-      "url": "https://beisdevpme5.sharepoint.com/sites/Honour8/Lists/Nominations/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={\"d9951864-beb6-485f-93be-2ee2f1f55e4b\":{\"location\":\"ClientSideExtension.ListViewCommandSet.CommandBar\"}}",
+      "url": "https://beisdevpme5.sharepoint.com/sites/Honour8/Lists/Nominations/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={\"d9951864-beb6-485f-93be-2ee2f1f55e4b\":{\"location\":\"ClientSideExtension.ListViewCommandSet\"}}",
       "webRoot": "${workspaceRoot}",
       "sourceMaps": true,
       "sourceMapPathOverrides": {
