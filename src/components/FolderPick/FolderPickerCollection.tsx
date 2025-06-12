@@ -14,7 +14,9 @@ import {
   Link,
   MessageBarType,
   MessageBar,
+  TextField,
 } from "@fluentui/react";
+import { IFolder, FolderPicker } from "@pnp/spfx-controls-react/lib/FolderPicker";
 
 const FolderPickerCollection: React.FC<IFolderPickerCollectionProps> = (
   props
@@ -24,6 +26,8 @@ const FolderPickerCollection: React.FC<IFolderPickerCollectionProps> = (
   const classNames = useMemo(() => generatePanelStyles(theme), [theme]);
   const [messageBarText, setMessageBarText] = useState<string>(null);
   const [messageBarType, setMessageBarType] = useState<MessageBarType>(null);
+  const [getFolderName, setFolderName] = useState<string>(null);
+  const [getFolderServerRelativeUrl, setFolderServerRelativeUrl] = useState<string>(null);
 
   const initializeProcessCollection = (): void => {
     const processItems = props.selectedRows
@@ -47,6 +51,14 @@ const FolderPickerCollection: React.FC<IFolderPickerCollectionProps> = (
 
     initialize().catch((error) => {});
   }, []);
+
+  const onSelectFolder = useCallback(
+    (folder: IFolder): void => {
+      setFolderName(folder.Name);
+      setFolderServerRelativeUrl(folder.ServerRelativeUrl);
+    },
+    [getFolderName]
+  );
 
   const onRenderCells = useCallback(
     (process: any): JSX.Element => {
@@ -81,6 +93,19 @@ const FolderPickerCollection: React.FC<IFolderPickerCollectionProps> = (
         >
           <span dangerouslySetInnerHTML={{ __html: messageBarText }} />
         </MessageBar>
+        <FolderPicker
+          context={props.context}
+          label="Select Folder"
+          required={true}
+          rootFolder={{
+            Name: props.listName, 
+            ServerRelativeUrl: props.listRootFolder
+          }}
+          onSelect={onSelectFolder}
+          canCreateFolders={true}
+        />
+        <TextField label="Text" value={getFolderName} readOnly />
+
         <PrimaryButton
           text="Copy"
           iconProps={{ iconName: "Copy" }}
